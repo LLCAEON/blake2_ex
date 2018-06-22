@@ -1,12 +1,12 @@
-defmodule Blake2.Mixfile do
+defmodule Blake2Ex.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :blake2,
+      app: :blake2_ex,
       version: "1.0.1",
       elixir: "~> 1.4",
-      name: "Blake2",
+      name: "Blake2Ex",
       source_url: "https://github.com/mwmiller/blake2_ex",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -40,7 +40,7 @@ defmodule Blake2.Mixfile do
       maintainers: ["Matt Miller"],
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/mwmiller/blake2_ex",
+        "GitHub" => "https://github.com/IvanAnanev/blake2_ex",
         "RFC" => "https://tools.ietf.org/html/rfc7693"
       }
     ]

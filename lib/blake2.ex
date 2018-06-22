@@ -1,4 +1,4 @@
-defmodule Blake2 do
+defmodule Blake2Ex do
   import Bitwise
 
   @moduledoc """

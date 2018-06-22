@@ -1,6 +1,6 @@
-defmodule Blake2Test do
+defmodule Blake2ExTest do
   use ExUnit.Case
-  doctest Blake2
+  doctest Blake2Ex
   import VectorHelper
 
   test "RFC 2b example" do
@@ -14,7 +14,7 @@ defmodule Blake2Test do
        18 D3 8A A8 DB F1 92 5A B9 23 86 ED D4 00 99 23
       """)
 
-    assert Blake2.hash2b(m) == h
+    assert Blake2Ex.hash2b(m) == h
   end
 
   test "RFC 2s example" do
@@ -26,7 +26,7 @@ defmodule Blake2Test do
        37 45 8B 20 9E D6 3A 29 4D 99 9B 4C 86 67 59 82
       """)
 
-    assert Blake2.hash2s(m) == h
+    assert Blake2Ex.hash2s(m) == h
   end
 
   test "repo 2b test vectors" do
@@ -37,7 +37,7 @@ defmodule Blake2Test do
         :noop
 
       [m | ins], [h | hashes], fun ->
-        assert Blake2.hash2b(m, 64, k) |> tag_from_bin == h
+        assert Blake2Ex.hash2b(m, 64, k) |> tag_from_bin == h
         fun.(ins, hashes, fun)
     end
 
@@ -52,7 +52,7 @@ defmodule Blake2Test do
         :noop
 
       [m | ins], [h | hashes], fun ->
-        assert Blake2.hash2s(m, 32, k) |> tag_from_bin == h
+        assert Blake2Ex.hash2s(m, 32, k) |> tag_from_bin == h
         fun.(ins, hashes, fun)
     end
 
